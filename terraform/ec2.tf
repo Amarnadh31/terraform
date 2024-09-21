@@ -5,5 +5,12 @@ resource "aws_instance" "terraform" {
     tags = {
         Name= "terra_instance"
     }
+#    provisioner "local-exec" {
+#         command = "/bin/bash -c 'echo ${self.private_ip} > private_ip.txt'"
+#     }
+    provisioner "local-exec" {
+        command = "bash -c 'echo ${self.private_ip} > private_ip.txt'"
+    }
+
 
 }

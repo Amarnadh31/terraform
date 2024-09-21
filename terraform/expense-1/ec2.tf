@@ -10,4 +10,9 @@ resource "aws_instance" "ex_instance" {
             Name= var.ex_instance_names[count.index]
         }
     )
+
+    provisioner "local-exec" {
+    command = "echo ${aws_instance.ex_instance[count.index].private_ip} > private_ip.txt"
 }
+}
+
