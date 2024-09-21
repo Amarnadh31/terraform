@@ -6,4 +6,7 @@ resource "aws_instance" "terraform" {
         Name= "terra_instance"
     }
 
+    provisioner "local-exec" {
+        command = "echo ${aws_instance.terraform.private_ip} > private_ip.txt"
+    }
 }
