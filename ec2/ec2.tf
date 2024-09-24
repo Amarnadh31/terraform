@@ -6,9 +6,9 @@ resource "aws_instance" "terraform" {
         Name= "terra_instance"
     }
 
-    provisioner "local-exec"{
-        command = "echo ${self.public_ip} > public_ip.txt"
-    }
+    # provisioner "local-exec"{
+    #     command = "echo ${self.public_ip} > public_ip.txt"
+    # }
 
     connection{
         type = "ssh"
